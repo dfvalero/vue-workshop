@@ -7,14 +7,12 @@
 ```
 npm install
 npm run dev
-
 ```
 
 - Run a server:
 
 ```
 php -S localhost:8051
-
 ```
 
 - Go to browser
