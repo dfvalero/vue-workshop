@@ -1,4 +1,4 @@
-# VUEX WORKSHOP
+# VUE WORKSHOP
 
 ## Steps to do before coding:
 
