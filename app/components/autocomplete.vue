@@ -7,9 +7,10 @@
         border: 1px solid black;
         padding: 5px 10px;
 
-        &:focus {
-            outline: none;
-        }
+
+    }
+    .autocomplete__input:focus {
+        outline: none;
     }
 
     .autocomplete__list {
