@@ -22,24 +22,22 @@
     <div class="autocomplete">
         <input class="autocomplete__input" type="text" @keyup="onKeyUp">
         <ul class="autocomplete__list" v-if="hasCoincidences">
-            <li v-for="element in list.elements">{{element}}</li>
+            <li v-for="element in list">{{element}}</li>
         </ul>
     </div>
 </template>
 
 <script>
     export default {
-        props: {
-            list: Object
-        },
+        props: [ 'list'],
         methods: {
             onKeyUp(e) {
-                this.list.getByText(e.target.value);
+                this.$emit('filter', e.target.value);
             }
         },
         computed: {
             hasCoincidences() {
-                return this.list.elements.length;
+                return this.list.length;
             }
         }
     }
