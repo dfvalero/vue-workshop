@@ -1,7 +1,7 @@
 <template>
     <div class="app">
-        <auto-complete :list="employees"></auto-complete>
-        <auto-complete :list="artists"></auto-complete>
+        <auto-complete :list="filteredEmployees" @filter="filterEmployee"></auto-complete>
+        <auto-complete :list="filteredArtists" @filter="filterArtist"></auto-complete>
     </div>
 </template>
 
@@ -15,7 +15,17 @@
         data() {
             return {
                 artists: new Artists(),
-                employees: new Employees()
+                employees: new Employees(),
+                filteredEmployees: [],
+                filteredArtists: []
+            }
+        },
+        methods: {
+            filterEmployee(str) {
+                this.filteredEmployees = this.employees.getByText(str)
+            },
+            filterArtist(str) {
+                this.filteredArtists = this.artists.getByText(str)
             }
         }
     }
